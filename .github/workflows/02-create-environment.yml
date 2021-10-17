@@ -34,4 +34,4 @@ jobs:
           AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
         run: |
           cd cdk
-          npm run network:deploy -- -c environmentName=${{ github.event.inputs.environmentName }}
+          npm run network:deploy -- -c environmentName=${{ github.event.inputs.environmentName }} -c region=${{ secrets.AWS_REGION }} -c accountId=${{ secrets.AWS_ACCESS_KEY_ID }}
